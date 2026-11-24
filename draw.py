@@ -4,6 +4,7 @@
 Deterministic: no randomness, no network, no timestamps. Pillow only.
 Run: python3 draw.py  -> writes entry.png beside this file.
 """
+import math
 import os
 from PIL import Image, ImageDraw, ImageFont
 
@@ -128,7 +129,7 @@ text_block(d, HX + 18, HY + 248,
            "Board voted unanimously Monday, 11 days after he resigned. "
            "Trump pressed the board; shares soared 31%. Commerce "
            "blacklisted Megaspeed, the chip firm at the scandal's centre.",
-           font(SANS, 20), INK, HW - 36, leading=25)
+           font(SANS, 21), INK, HW - 36, leading=26)
 
 # ------------------------------------------------- second row: two panels
 RY, RH = 452, 228
@@ -222,7 +223,6 @@ text_block(d, LX + 16, LY + 122,
 d.rectangle([RX, LY, RX + LW, LY + LH], outline=INK, width=2)
 d.rectangle([RX + 2, LY + 2, RX + PW - 2, LY + 58], fill=(0, 51, 153))
 # circle of twelve gold stars (EU flag)
-import math
 scx, scy, sr = RX + 90, LY + 30, 20
 for k in range(12):
     ang = 2 * math.pi * k / 12 - math.pi / 2
